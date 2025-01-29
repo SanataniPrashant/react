@@ -1,4 +1,4 @@
-function header (){
+function Header(){
     return (
         <>
         <h1>THis is headder page</h1>
@@ -8,4 +8,4 @@ function header (){
     )
 }
 
-export default header;
+export default Header;
