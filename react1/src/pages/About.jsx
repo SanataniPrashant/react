@@ -15,7 +15,7 @@ You can easily change the formatting of  <br />selected text in the
             <Link to="aboutprod"> About Product  </Link> 
             <br/> <br />
             <Link to="aboutservice"> About Services  </Link> 
-</th>
+        </th>
         <td> 
            <Outlet/>
         </td>
