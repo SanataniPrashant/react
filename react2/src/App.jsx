@@ -123,7 +123,7 @@ const ana = EmpData.map((key)=><EmpDesign  empno={key.empno} empname={key.name} 
 
         <hr />
 
-        <img src="public/image/th.jpg"/>
+        <img src="image/th.jpg"/>
     </>
   )
 }
