@@ -1,7 +1,7 @@
 import Navbar from "./Navbar"
 import Card from "./Card"
 import myimg from "./t.jpg"
-
+import {useRef} from "react"
 function App() {
 
   let para = {
@@ -9,8 +9,43 @@ function App() {
     fontSize:40,
   }
 
+  const myRef = useRef("");
+
+  const myval =()=>{
+    myRef.current.style.color="red"
+    myRef.current.style.border="2px solid black"
+    myRef.current.style.padding="20px"
+  }
+
+  const oneRef = useRef("");
+
+  const myfirst =()=>{
+    oneRef.current.style.color="red"
+    oneRef.current.style.border="2px solid black"
+    oneRef.current.style.padding="20px"
+  }
+
+  const mySecond =()=>{
+    oneRef.current.style.backgroundColor="yellow"
+  }
+
+  const myThird =()=>{
+    oneRef.current.style.fontSize="70px"
+  }
+ 
   return (
     <>
+  <button onClick={myval}>click</button>
+    <div>
+    <h1 ref={myRef}>dfghjk</h1>
+    </div>
+
+
+    <button onClick={myfirst}>click1</button>
+    <button onClick={mySecond}>click2</button>
+    <button onClick={myThird}>click3</button>
+
+    <div><h1 ref={oneRef}>Welcome to Cybrom</h1></div>
     <Navbar />
 
     <hr />
