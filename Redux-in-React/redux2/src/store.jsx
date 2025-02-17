@@ -1,10 +1,8 @@
-import { configureStore } from '@reduxjs/toolkit';
-import mytodo from './todoSlice';
-
-const Store = configureStore({
-  reducer: {
-    myans: mytodo
-  }
-});
-
-export default Store;
+import {configureStore} from "@reduxjs/toolkit";
+import todoAns from "./todoSlice";
+const store=configureStore({
+    reducer:{
+        todo:todoAns
+    }
+})
+export default store;

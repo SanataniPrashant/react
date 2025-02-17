@@ -1,26 +1,47 @@
-import {createSlice} from '@reduxjs/toolkit'
-
-const TodoSlice = createSlice({
-    name: 'todo',
-    initialState:{ 
-        todolist:[]
-
-    },
-    reducers: {
-        addTodo(state, action) {
-            state.todolist.push(action.payload)
-            },
-        removeTodo(state, action) {
-            state.todolist= state.todolist.filter(item => item.id !== action.payload)
+import { createSlice } from "@reduxjs/toolkit";
+const todoSlice= createSlice({
+      name:"todo",
+      initialState:{
+        task:[]
+      },
+    reducers:{
+        addTask:(state, actions)=>{
+            console.log(actions.payload);
+            state.task.push(actions.payload);
         },
-        editTodo:(state,actions)=>{
-            console.log(actions.payload)
-           for(let i in  state.todolist.length)
-           {
-            console.log(state.todolist[i])
-           }
+        taskDelete:(state, actions)=>{
+            state.task=state.task.filter(item=>item.id!=actions.payload.id);
+        },
+        taskComplete:(state, actions)=>{
+            for (var i=0; i<state.task.length; i++)
+            {
+                if (state.task[i].id==actions.payload.id)
+                {
+                    state.task[i].CompStatus=true;
+                }
+            }
+             console.log(actions.payload.id);
+        },
+        taskInComplete:(state, actions)=>{
+            for (var i=0; i<state.task.length; i++)
+            {
+                if (state.task[i].id==actions.payload.id)
+                {
+                    state.task[i].CompStatus=false;
+                }
+            }
+             console.log(actions.payload.id);
+        },
+        taskeditSave:(state, actions)=>{
+            for(var i=0; i<state.task.length; i++)
+            {
+                if (state.task[i].id==actions.payload.id)
+                {
+                    state.task[i].work=actions.payload.data;
+                }
+            }
         }
     }
 })
-export default TodoSlice.reducer
-export const {addTodo,removeTodo,editTodo} = TodoSlice.actions
+export const {addTask, taskDelete, taskComplete, taskInComplete, taskeditSave} = todoSlice.actions;
+export default todoSlice.reducer
