@@ -1,9 +1,21 @@
 import {useState} from 'react'
 import './App.css'
-
+import Bg from './Component/Bg'
 function App() {
   const [name,setName] = useState("ramm")
   const [num,setNum] = useState(0)
+
+  const [c, setc]= useState([
+    "ram",45, "rammm" 
+
+  ]);
+
+  const [o, seto]= useState({
+    name:"ramm",
+    age:45
+
+});
+
   function ram(a){
     alert("Ram is working " + a)
   }
@@ -26,6 +38,10 @@ function App() {
 
   return (
     <>
+
+      <Bg/>
+
+
       <h1> welcome to this class </h1>
       <button onClick={()=>ram(45)}>click</button>
       <button onDoubleClick={()=>ram("ram")}>click</button>
@@ -40,6 +56,10 @@ function App() {
       <button onClick={increment}>Increment</button>
       {num}
       <button onClick={decrement}>Decrement</button>
+
+
+      <h1>my name is {o.name}</h1>
+      <h1>my name is {c[2]}</h1>
     </>
   )
 }
