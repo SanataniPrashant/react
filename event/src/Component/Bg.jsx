@@ -5,6 +5,7 @@ const Bg = ()=>{
     const [color, setColor] = useState("red")
     const [bg, setBg] = useState("block")
     const [Tg, setTg] = useState(true)
+    let [tg,settg] = useState(true)
 
     // const coolor1 =()=>{
     //     setColor("blue")
@@ -26,6 +27,11 @@ const Bg = ()=>{
     return(
 
         <>
+        {tg ? <h1>welcome to this universe</h1>: ""}
+     
+      
+        <button onClick={()=>settg(!tg)}>  {tg ? "hide": "show"} </button>
+
         <div style={{height:"90vh", backgroundColor:color}}>fghj</div>
 
         <button onClick={()=>setColor("blue")}>blue</button>
